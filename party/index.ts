@@ -10,7 +10,7 @@ type ServerMessage =
   | { type: "init"; files: FileRecord[]; latest?: string }
   | { type: "file-update"; file: FileRecord };
 
-const ONE_HOUR = 60 * 60 * 1000;
+const ONE_HOUR = 3 * 60 * 60 * 1000;
 
 export default class Server implements Party.Server {
   private files: Map<string, FileRecord> = new Map();
@@ -99,6 +99,21 @@ export default class Server implements Party.Server {
     return Response.json({ ok: true, stored: record });
   }
 
+  private async handlePrune(request: Request) {
+    if (request.method !== "POST" && request.method !== "DELETE") {
+      return new Response("Method not allowed", { status: 405 });
+    }
+
+    const removed = this.files.size;
+    this.files.clear();
+    await this.persist();
+
+    const message: ServerMessage = { type: "init", files: [] };
+    this.room.broadcast(JSON.stringify(message));
+
+    return Response.json({ ok: true, pruned: removed });
+  }
+
   async onRequest(request) {
     await this.ensureLoaded();
 
@@ -112,6 +127,10 @@ export default class Server implements Party.Server {
 
     if (pathAfterRoom === "ingest") {
       return this.handleIngest(request);
+    }
+
+    if (pathAfterRoom === "prune") {
+      return this.handlePrune(request);
     }
 
     if (request.method === "GET" && (pathAfterRoom === "" || pathAfterRoom === "state")) {

@@ -13,15 +13,21 @@ import { watch } from "node:fs";
 import { stat } from "node:fs/promises";
 import path from "node:path";
 
-type CliArgs = { host?: string; room?: string; protocol?: string; party?: string; prefix?: string };
-type FileEvent = "rename" | "change";
+type CliArgs = {
+  host?: string;
+  room?: string;
+  protocol?: string;
+  party?: string;
+  prefix?: string;
+  prune?: boolean;
+};
 
 const argv = parseArgs(process.argv.slice(2));
 
 const host =
   argv.host ??
   process.env.PARTYKIT_HOST ??
-  "localhost:1999";
+  "sql-party-party.bru02.partykit.dev"; // ??"localhost:1999";
 
 const party = argv.party ?? process.env.PARTYKIT_PARTY ?? "main";
 const prefix = argv.prefix ?? process.env.PARTYKIT_PREFIX ?? "parties";
@@ -31,19 +37,50 @@ const protocol =
   (host.includes("localhost") || host.includes("127.0.0.1") ? "http" : "https");
 
 const room = argv.room ?? process.env.PARTYKIT_ROOM ?? "sql-room";
-const ingestUrl = `${protocol}://${host}/${prefix}/${party}/${room}/ingest`;
+const baseUrl = `${protocol}://${host}/${prefix}/${party}/${room}`;
+const ingestUrl = `${baseUrl}/ingest`;
+const pruneUrl = `${baseUrl}/prune`;
+const shouldPrune = argv.prune ?? process.env.PARTYKIT_PRUNE === "true";
 const debounceMs = 200;
 const pending = new Map<string, ReturnType<typeof setTimeout>>();
 
-console.log(`[watcher] watching *.sql in ${process.cwd()}`);
-console.log(`[watcher] sending updates to ${ingestUrl}`);
+async function main() {
+  console.log(`[watcher] targeting room ${room} on ${baseUrl}`);
 
-void primeExistingFiles();
-startWatcher();
+  if (shouldPrune) {
+    await pruneFiles();
+    return;
+  }
+
+  console.log(`[watcher] watching *.sql in ${process.cwd()}`);
+  console.log(`[watcher] sending updates to ${ingestUrl}`);
+  await primeExistingFiles();
+  startWatcher();
+}
+
+void main();
+
+async function pruneFiles() {
+  console.log(`[watcher] pruning stored files via ${pruneUrl}`);
+  try {
+    const res = await fetch(pruneUrl, { method: "POST" });
+    if (!res.ok) {
+      console.error(`[watcher] prune failed: ${res.status} ${res.statusText}`);
+      process.exitCode = 1;
+      return;
+    }
+    const body = (await res.json().catch(() => null)) as { pruned?: number } | null;
+    const pruned = typeof body?.pruned === "number" ? body.pruned : "unknown";
+    console.log(`[watcher] prune successful, removed ${pruned} file(s)`);
+  } catch (err) {
+    console.error(`[watcher] prune request errored`, err);
+    process.exitCode = 1;
+  }
+}
 
 function startWatcher() {
   // fs.watch with recursive mode works on macOS & Windows (good enough for prototype)
-  watch(process.cwd(), { recursive: true }, (event: FileEvent, filename?: string) => {
+  watch(process.cwd(), { recursive: true }, (_event, filename) => {
     if (!filename || !filename.endsWith(".sql")) {
       return;
     }
@@ -120,6 +157,7 @@ function parseArgs(args: string[]): CliArgs {
     else if (arg === "--protocol" || arg === "-p") out.protocol = args[++i];
     else if (arg === "--party") out.party = args[++i];
     else if (arg === "--prefix") out.prefix = args[++i];
+    else if (arg === "--prune" || arg === "-x") out.prune = true;
   }
   return out;
 }

@@ -27,5 +27,5 @@ export default defineConfig({
       ],
     }),
   ],
-  assetsInclude: ["**/*.xml", "**/*.csv"],
-})
+  assetsInclude: ["**/*.xml", "**/*.csv", "**/*.groovy"],
+});
