@@ -1,0 +1,11 @@
+{
+  "name": "sql-party-ui",
+  "main": "worker/index.ts",
+  "compatibility_date": "2024-12-05",
+  "assets": {
+    "not_found_handling": "single-page-application"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

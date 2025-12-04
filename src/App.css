@@ -1,0 +1,361 @@
+#root {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 20px 48px;
+  color: #0f172a;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.nav {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  margin-left: auto;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  border: 1px solid #e2e5ea;
+  background: #fff;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font: inherit;
+  cursor: pointer;
+  transition: border-color 120ms ease, background 120ms ease, box-shadow 120ms ease,
+    color 120ms ease;
+}
+
+.nav-link:hover {
+  border-color: #cbd3da;
+}
+
+.nav-link.active {
+  background: #fbfdf4;
+  border-color: #c5d92c;
+  box-shadow: 0 0 0 1px #c5d92c inset;
+  color: #2f3a1a;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+  color: #c5d92c;
+  margin: 0 0 4px;
+}
+
+.muted {
+  margin: 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.meta {
+  display: none;
+}
+
+.tabbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f7f8fa;
+  border: 1px solid #e2e5ea;
+  border-radius: 10px 10px 0 0;
+  padding: 6px 6px 0;
+  overflow-x: auto;
+}
+
+.tab {
+  border: 1px solid transparent;
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  white-space: nowrap;
+  transition: border-color 120ms ease, background 120ms ease, box-shadow 120ms ease,
+    color 120ms ease;
+}
+
+.tab:hover {
+  border-color: #cbd3da;
+}
+
+.tab.active {
+  background: #fbfdf4;
+  border-color: #c5d92c;
+  box-shadow: 0 0 0 1px #c5d92c inset;
+  color: #2f3a1a;
+}
+
+.tab-name {
+  font-weight: 700;
+}
+
+.tab-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  padding-left: 8px;
+  border-left: 1px solid #e2e5ea;
+}
+
+.icon-btn {
+  border: 1px solid #e2e5ea;
+  background: #fff;
+  border-radius: 8px;
+  padding: 6px 8px;
+  cursor: pointer;
+  font: inherit;
+  position: relative;
+  width: 36px;
+  height: 34px;
+  overflow: hidden;
+  transition: border-color 120ms ease, background 120ms ease;
+}
+
+.icon-btn:hover:not(:disabled) {
+  border-color: #cbd3da;
+  background: #f7f8fa;
+}
+
+.icon-btn:disabled {
+  cursor: not-allowed;
+  color: #9ca3af;
+}
+
+.icon-layer {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  transition: opacity 140ms ease, transform 140ms ease, filter 140ms ease;
+}
+
+.icon-layer.visible {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+}
+
+.icon-layer.hidden {
+  opacity: 0;
+  transform: scale(0.9);
+  filter: blur(2px);
+}
+
+.editor-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  min-height: 480px;
+  overflow: hidden;
+}
+
+.editor-shell {
+  padding: 0;
+  flex: 1;
+  min-height: 400px;
+}
+
+.cm-editor {
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  height: 100%;
+}
+
+.markdown-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.markdown {
+  width: min(65ch, 100%);
+}
+
+.download-link {
+  display: inline-block;
+  vertical-align: baseline;
+  font-weight: 700;
+  color: #c5d92c;
+  text-underline-offset: 2px;
+  transition: color 140ms ease, text-decoration-color 140ms ease;
+}
+
+.download-link:hover {
+  text-decoration: underline;
+}
+
+.download-link:focus-visible {
+  outline: 2px solid #c5d92c;
+  outline-offset: 2px;
+  text-decoration: underline;
+}
+
+.download-icon {
+  color: currentColor;
+  margin-right: 6px;
+  vertical-align: text-bottom;
+}
+
+.markdown .task-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.markdown .task-list-item {
+  list-style: none;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 10px;
+  align-items: flex-start;
+  padding: 8px 0;
+  border-bottom: 1px solid #f1f3f7;
+  text-decoration-line: line-through;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 2px;
+  transition: color 180ms ease, text-decoration-color 180ms ease;
+  cursor: pointer;
+}
+
+.markdown .task-list-item:last-child {
+  border-bottom: none;
+}
+
+.markdown .task-list-item input[type="checkbox"] {
+  margin-top: 2px;
+  width: 18px;
+  height: 18px;
+  accent-color: #c5d92c;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.markdown .task-list-item .task-body {
+  grid-column: 2;
+}
+
+.markdown .task-list-item:has(input:checked), .markdown .task-list-item:has(input:checked) .download-link {
+  color: #94a3b8;
+  text-decoration-color: currentColor;
+  text-decoration: line-through;
+  font-weight: normal;
+}
+
+svg {
+  transition: opacity 180ms ease;
+}
+
+.markdown .task-list-item:has(input:checked) svg {
+  opacity: 0;
+}
+
+.markdown .task-list-item.is-checked {
+  color: #94a3b8;
+  text-decoration-color: currentColor;
+}
+
+.markdown h2 {
+  margin: 18px 0 10px;
+  font-size: 22px;
+}
+
+.markdown h2:first-of-type {
+  margin-top: 4px;
+}
+
+.markdown p {
+  margin: 0 0 12px;
+}
+
+.markdown ul {
+  margin: 0 0 14px;
+  padding-left: 20px;
+}
+
+.markdown li + li {
+  margin-top: 6px;
+}
+
+.markdown :not(pre) > code {
+  background: #f2f4f8;
+  padding: 1px 4px;
+  border-radius: 4px;
+  font-family: "JetBrains Mono", "SFMono-Regular", monospace;
+  font-size: 13px;
+}
+
+.markdown pre {
+  margin: 0 0 16px;
+  padding: 0;
+  overflow-x: auto;
+}
+
+.markdown pre code {
+  display: block;
+  padding: 12px 14px;
+  border-radius: 10px;
+}
+
+.markdown hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 20px 0;
+}
+
+@media (max-width: 960px) {
+  #root {
+    padding: 20px 16px 36px;
+  }
+  .header {
+    flex-direction: column;
+  }
+  .nav {
+    margin-left: 0;
+  }
+  .tabbar {
+    flex-wrap: wrap;
+  }
+}
+/*
+Source - https://stackoverflow.com/a
+Posted by KyleMit, modified by community. See post 'Timeline' for change history
+Retrieved 2025-12-03, License - CC BY-SA 4.0
+*/
+
+html {
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}

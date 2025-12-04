@@ -1,0 +1,38 @@
+personid;name;email;birth_year;building_name;apartment_number;floor;services;square_meters;price_per_sqm
+P001;John Doe;john.doe@example.com;1984;Maple Heights;126;4;WiFi, Laundry, Parking;76;16
+P001;John Doe;john.doe@example.com;1984;Oakwood Terrace;295;4;Gym, WiFi, Laundry, Parking;56;21
+P001;John Doe;john.doe@example.com;1984;Oakwood Terrace;293;2;Gym, WiFi, Parking;80;19
+P001;John Doe;john.doe@example.com;1984;Oakwood Terrace;224;5;Gym, WiFi, Laundry, Parking;50;15
+P002;Emily Smith;emily.smith@example.com;1991;Maple Heights;283;1;Gym, WiFi, Laundry;117;13
+P002;Emily Smith;emily.smith@example.com;1991;Oakwood Terrace;254;2;Gym, WiFi, Parking;116;16
+P003;Michael Johnson;michael.johnson@example.com;1989;Sunset Plaza;271;5;WiFi, Laundry;144;11
+P003;Michael Johnson;michael.johnson@example.com;1989;Sunset Plaza;123;2;Laundry;79;30
+P003;Michael Johnson;michael.johnson@example.com;1989;Sunset Plaza;247;2;WiFi, Laundry, Parking;55;29
+P003;Michael Johnson;michael.johnson@example.com;1989;Oakwood Terrace;273;2;WiFi, Laundry;111;13
+P003;Michael Johnson;michael.johnson@example.com;1989;Oakwood Terrace;170;4;WiFi, Laundry, Parking;91;26
+P004;Sarah Brown;sarah.brown@example.com;1987;Sunset Plaza;236;2;Gym, WiFi, Parking;146;29
+P004;Sarah Brown;sarah.brown@example.com;1987;Maple Heights;272;4;Parking;144;27
+P004;Sarah Brown;sarah.brown@example.com;1987;Sunset Plaza;288;3;Gym, WiFi, Parking;58;11
+P005;David Wilson;david.wilson@example.com;1984;Oakwood Terrace;287;4;WiFi, Parking;89;16
+P005;David Wilson;david.wilson@example.com;1984;Maple Heights;198;2;Gym, WiFi, Laundry, Parking;55;12
+P006;Laura Garcia;laura.garcia@example.com;1994;Sunset Plaza;239;4;WiFi, Laundry, Parking;129;26
+P006;Laura Garcia;laura.garcia@example.com;1994;Oakwood Terrace;178;5;Gym, WiFi, Laundry, Parking;130;19
+P006;Laura Garcia;laura.garcia@example.com;1994;Maple Heights;302;2;Gym, WiFi, Laundry, Parking;132;13
+P006;Laura Garcia;laura.garcia@example.com;1994;Sunset Plaza;244;1;Gym, WiFi, Laundry, Parking;129;18
+P006;Laura Garcia;laura.garcia@example.com;1994;Oakwood Terrace;142;1;Gym, WiFi, Parking;83;21
+P007;James Martinez;james.martinez@example.com;1995;Oakwood Terrace;222;3;WiFi, Laundry, Parking;121;23
+P007;James Martinez;james.martinez@example.com;1995;Maple Heights;144;3;Gym, WiFi, Laundry, Parking;144;11
+P007;James Martinez;james.martinez@example.com;1995;Sunset Plaza;107;5;Laundry;131;13
+P007;James Martinez;james.martinez@example.com;1995;Oakwood Terrace;275;2;WiFi, Laundry;134;15
+P007;James Martinez;james.martinez@example.com;1995;Maple Heights;147;4;WiFi, Laundry, Parking;147;13
+P007;James Martinez;james.martinez@example.com;1995;Sunset Plaza;268;1;WiFi, Laundry;120;16
+P008;Emma Davis;emma.davis@example.com;1990;Oakwood Terrace;120;5;WiFi, Parking;126;29
+P008;Emma Davis;emma.davis@example.com;1990;Oakwood Terrace;233;4;Gym, WiFi, Laundry, Parking;131;23
+P008;Emma Davis;emma.davis@example.com;1990;Oakwood Terrace;223;4;WiFi, Laundry;58;14
+P008;Emma Davis;emma.davis@example.com;1990;Oakwood Terrace;253;4;Gym, WiFi, Parking;61;13
+P009;Robert Lopez;robert.lopez@example.com;1992;Maple Heights;158;2;Gym, WiFi, Laundry, Parking;70;12
+P009;Robert Lopez;robert.lopez@example.com;1992;Sunset Plaza;128;1;Gym, WiFi, Laundry, Parking;62;13
+P009;Robert Lopez;robert.lopez@example.com;1992;Sunset Plaza;286;3;Gym, WiFi, Parking;147;30
+P010;Sophia Taylor;sophia.taylor@example.com;1982;Oakwood Terrace;277;4;WiFi, Laundry, Parking;143;22
+P010;Sophia Taylor;sophia.taylor@example.com;1982;Sunset Plaza;146;2;Gym, WiFi, Parking;87;11
+P010;Sophia Taylor;sophia.taylor@example.com;1982;Oakwood Terrace;104;3;WiFi, Laundry;93;26

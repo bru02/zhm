@@ -1,0 +1,72 @@
+<Apartments>
+<Apartment>
+<BuildingName>Pine Ridge</BuildingName>
+<ApartmentNumber>310</ApartmentNumber>
+<Floor>5</Floor>
+<Size>146</Size>
+<UnitPrice>28</UnitPrice>
+</Apartment>
+<Apartment>
+<BuildingName>Pine Ridge</BuildingName>
+<ApartmentNumber>311</ApartmentNumber>
+<Floor>5</Floor>
+<Size>129</Size>
+<UnitPrice>12</UnitPrice>
+</Apartment>
+<Apartment>
+<BuildingName>Pine Ridge</BuildingName>
+<ApartmentNumber>312</ApartmentNumber>
+<Floor>3</Floor>
+<Size>104</Size>
+<UnitPrice>26</UnitPrice>
+</Apartment>
+<Apartment>
+<BuildingName>Pine Ridge</BuildingName>
+<ApartmentNumber>303</ApartmentNumber>
+<Floor>3</Floor>
+<Size>149</Size>
+<UnitPrice>22</UnitPrice>
+</Apartment>
+<Apartment>
+<BuildingName>Pine Ridge</BuildingName>
+<ApartmentNumber>304</ApartmentNumber>
+<Floor>1</Floor>
+<Size>128</Size>
+<UnitPrice>17</UnitPrice>
+</Apartment>
+<Apartment>
+<BuildingName>River View</BuildingName>
+<ApartmentNumber>305</ApartmentNumber>
+<Floor>5</Floor>
+<Size>104</Size>
+<UnitPrice>28</UnitPrice>
+</Apartment>
+<Apartment>
+<BuildingName>River View</BuildingName>
+<ApartmentNumber>306</ApartmentNumber>
+<Floor>2</Floor>
+<Size>102</Size>
+<UnitPrice>28</UnitPrice>
+</Apartment>
+<Apartment>
+<BuildingName>River View</BuildingName>
+<ApartmentNumber>307</ApartmentNumber>
+<Floor>3</Floor>
+<Size>136</Size>
+<UnitPrice>26</UnitPrice>
+</Apartment>
+<Apartment>
+<BuildingName>River View</BuildingName>
+<ApartmentNumber>308</ApartmentNumber>
+<Floor>3</Floor>
+<Size>119</Size>
+<UnitPrice>13</UnitPrice>
+</Apartment>
+<Apartment>
+<BuildingName>River View</BuildingName>
+<ApartmentNumber>309</ApartmentNumber>
+<Floor>1</Floor>
+<Size>138</Size>
+<UnitPrice>18</UnitPrice>
+</Apartment>
+</Apartments>
